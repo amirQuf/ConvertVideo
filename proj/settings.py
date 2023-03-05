@@ -143,3 +143,5 @@ CACHES = {
         'LOCATION': 'my_cache_table',
     }
 }
+
+DEFAULT_AUTO_FIELD ='django.db.models.BigAutoField'

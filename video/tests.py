@@ -3,8 +3,7 @@ from .models import Video
 
 class Test_ffmpeg(TestCase):
     def test_exitance_of_ffmpeg(self):
-        import ffmpeg
-        assert ffmpeg
+        assert  import ffmpeg
 
     def test_upload_file(self):
         video = Video(video ='media/video/fak.mp4')
