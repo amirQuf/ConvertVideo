@@ -10,7 +10,11 @@ from .models import Video
 @shared_task
 def convert(id):
     start_time = perf_counter()
-    instance = Video.objects.get(id=id)
+    try:
+        instance = Video.objects.get(id=id)
+    except Video.DoesNotExist:
+        return None
+        
     video_path = instance.video.path   
     video_name = re.search(r'\/((.+))\.mp4',video_path).group(1)
     output_name_240 = f'media/video_240/{video_name}_240.mp4'   
@@ -35,5 +39,12 @@ def convert(id):
     stop_time = perf_counter()
     delta_time = stop_time - start_time
     instance.time_to_convert = delta_time
+    
+    with open(output_name_240, 'rb') as file_240, open(output_name_360, 'rb') as file_360:
+        instance.video_240.save(f"{video_name}_240.mp4", File(file_240))
+        instance.video_360.save(f"{video_name}_360.mp4", File(file_360))
+        
+    os.remove(output_name_240)
+    os.remove(output_name_360)
     instance.save()
     return instance
