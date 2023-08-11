@@ -1,5 +1,5 @@
 # ConvertVideo
-
+ it just a simple video uploader that you upload your video and it will lower the qulity of your picture 
 
 ## Table of Contents
 
@@ -16,7 +16,7 @@ Follow these steps to set up the project locally:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/your-repo.git
+   git clone https://github.com/amirQuf/ConvertVideo
    ```
 
 2. Create a virtual environment:
