@@ -1,5 +1,6 @@
 # ConvertVideo
- it just a simple video uploader that you upload your video and it will lower the qulity of your picture 
+ it just a simple video uploader that you upload your video and it will lower the qulity of your video
+
 
 ## Table of Contents
 
